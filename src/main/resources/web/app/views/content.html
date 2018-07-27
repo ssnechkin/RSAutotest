@@ -1,0 +1,74 @@
+<div ng-controller="ContentController as ctrl">
+	<div id="workspace">
+		<div id="leftPanel">
+			<div id="topPanel">
+				<div id="filePanel">
+					<div id="topFilePanel">
+						<div class="headLogo">
+							<div class="headDiv">
+								<span><span id="logo">RSAutotest</span><br><span id="logoBotton">Автоматизация тестирования</span></span>
+							</div>
+						</div>					
+					</div>
+					<div id="BottomFilePanel">
+						<div id="FileListDiv">
+							<select id="FileList" class="ui-button" ng-model="ctrl.views.fileList.selectedFile" ng-change='ctrl.views.fileList.change()'>
+								<option ng-repeat="file in ctrl.views.fileList.list" ng-selected="file.selected" value="{{file.text}}">{{file.text}}</option>
+							</select>
+						</div>
+						<input type="file" id="addFile" onchange="angular.element(this).scope().ctrl.views.fileList.addFile.change(this);" accept=".json" style="display:none" />
+						<div id="AddNewFile" ng-click="ctrl.views.fileList.addNewFile($event)">Создать</div>
+						<div id="AddFileButton" ng-click="ctrl.views.fileList.clickButtonAddFile()">Добавить</div>
+						<a id="DownloadFile" ng-show="ctrl.views.fileList.selectedFile.length > 0" target="_blank" href="">Скачать</a>
+						<div id="DeletFile" ng-show="ctrl.views.fileList.selectedFile.length > 0" ng-click="ctrl.views.fileList.remove()">Удалить</div>
+					</div>
+				</div>
+			</div>
+			<div id="bottomPanel" oncontextmenu='return false;' ng-mouseup="ctrl.views.handleClick($event)"><div id="SuiteTestList"></div></div>
+		</div>
+		<div id="rightPanel">
+			<div id="topRightPanel"></div>
+			<div id="bottomRightPanel"><div id="StepList"></div></div>
+		</div>
+	</div>
+
+	<div ng-include src="'app/views/dialogs/file-new-add.html'"></div>
+	<div ng-include src="'app/views/dialogs/suite-edit.html'"></div>
+	<div ng-include src="'app/views/dialogs/suite-add.html'"></div>
+	<div ng-include src="'app/views/dialogs/test-add-in-suite.html'"></div>
+	<div ng-include src="'app/views/dialogs/test-edit.html'"></div>
+	<div ng-include src="'app/views/dialogs/test-add.html'"></div>
+	<div ng-include src="'app/views/dialogs/test-add-in-test.html'"></div>
+	<div ng-include src="'app/views/dialogs/step-edit.html'"></div>
+	<div ng-include src="'app/views/dialogs/step-add.html'"></div>
+	<div ng-include src="'app/views/dialogs/step-add-in-step.html'"></div>
+	<div ng-include src="'app/views/dialogs/step-add-in-test.html'"></div>
+	<div ng-include src="'app/views/dialogs/remove.html'"></div>
+	<span ng-init="
+		ctrl.leftTreeNameElement = '#SuiteTestList';
+		ctrl.rightTreeNameElement = '#StepList';
+		globalSettings.tree.treeLeft.nameElementId = ctrl.leftTreeNameElement;
+		globalSettings.tree.treeRight.nameElementId = ctrl.rightTreeNameElement;
+
+		ctrl.downloaFileElement = '#DownloadFile';
+		ctrl.deletFileElement = '#DeletFile';
+		ctrl.addNewFileElement = '#AddNewFile';
+		ctrl.addFileElement = '#addFile';
+		ctrl.addFileButtonElement = '#AddFileButton';
+		ctrl.fileList = '#FileList';
+
+		dialogs.options.fileNewAdd.element = '#FileNewAdd';
+		dialogs.options.suiteEdit.element = '#SuiteEdit';
+		dialogs.options.suiteAdd.element = '#SuiteAdd';
+		dialogs.options.testAddInSuite.element = '#TestAddInSuite';
+		dialogs.options.testEdit.element = '#TestEdit';
+		dialogs.options.testAdd.element = '#TestAdd';
+		dialogs.options.testAddInTest.element = '#TestAddInTest';
+		dialogs.options.stepEdit.element = '#StepEdit';
+		dialogs.options.stepAdd.element = '#StepAdd';
+		dialogs.options.stepAddInStep.element = '#StepAddInStep';
+		dialogs.options.stepAddInTest.element = '#StepAddInTest';
+		dialogs.options.remove.element = '#Remove';
+		ctrl.init();
+	"></span>
+</div>

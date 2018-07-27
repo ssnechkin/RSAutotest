@@ -1,0 +1,16 @@
+<div id="TestAddInSuite" class="dialog">
+    <label>Наименование: <input type="text" ng-model="dialogs.options.testAddInSuite.data.test;"><br></label>
+    <label>Краткое наименование:
+        <input type="text" ng-model="dialogs.options.testAddInSuite.data.shortName;"><br></label>
+    <label>Данные для теста из: <input type="text" ng-model="dialogs.options.testAddInSuite.data.value;"><br></label>
+    <label>Запускать после статуса родительского теста:
+    <select ng-model="dialogs.options.testAddInSuite.data.startupDependencyOnParent;">
+        <option value="RUN">Выполняется</option>
+        <option selected value="COMPLETED">Завершён</option>
+        <option value="SUCCESSFUL">Выполнен успешно</option>
+        <option value="FAILURE">Выполнен с ошибкой</option>
+        <option value="BROKEN">Сломан</option>
+        <option value="CANCELLED">Отменён</option>
+    </select><br></label><label>Не выполнять:
+    <input type="checkbox" ng-model="dialogs.options.testAddInSuite.data.notRun;"></label>
+</div>

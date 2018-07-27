@@ -1,0 +1,46 @@
+.rs-tree li             { white-space: nowrap; list-style-type: none; /* Убираем маркеры */ text-align: -webkit-match-parent; }
+.rsTree                 { cursor: default; display: inline-block; line-height: 24px; height: 24px; padding-left:3px; padding-right:3px;}
+.rsTree~ul              { display: none; margin: 0px;}
+.rsTree:hover           { background-color: #e7f4f9; color: #000; }
+.rsTree-selected        { background-color: #beebff; }
+.rsTree-selected:hover  { background-color: #beebff; }
+.rsTree-opened~ul       { display: block; }
+
+.rs-tree i { width: 24px; height: 24px; display: inline-block; text-decoration: none; vertical-align: top; text-align: center; }
+.rsTree-i {background-image: url(32px.png); background-position: -68px -4px;}
+.rsTree-i-group-open {background-image: url(32px.png); background-position: -132px -4px;}
+.rsTree-i-group-close {background-image: url(32px.png); background-position: -100px -4px;}
+
+.rsTree-li {background-image: url(32px.png); background-position: -292px -4px; background-repeat: repeat-y;}
+
+.rsTree-context-menu    {display: none;}
+.rsTree-context-submenu    {display: none;}
+.rsTree-context-menu-dialog    {
+    position: absolute;
+    z-index: 100;
+    background-color: #f7f7f7;
+    border: 1px solid #c7c7c7;
+    padding: 1px;
+    text-shadow: 1px 1px 0 white;
+
+    /* Добавляем тень для меню, что бы отобразить его слегка выше остальных элементов страницы: */
+    -moz-box-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Параметры тени */
+
+    -moz-border-radius: 3px; /* закругление для старых Mozilla Firefox */
+    -webkit-border-radius: 3px; /* закругление для старых Chrome и Safari */
+    -khtml-border-radius: 3px; /*закругление для браузера Konquerer системы Linux */ border-radius: 3px; /* закругление углов для всех, кто понимает */
+}
+.rsTree-context-menu-dialog li { white-space: nowrap; list-style-type: none; /* Убираем маркеры */ text-align: -webkit-match-parent; }
+.rsTree-context-menu ul {margin: 0px; padding: 0px;}
+
+.rsTree-context-menu-dialog  span { color: #333; text-decoration: none; display: block; padding: 10px; border: 1px solid #f7f7f7; text-shadow: 1px 1px 0 white; cursor: default;
+    -moz-border-radius: 2px; /* закругление для старых Mozilla Firefox */
+    -webkit-border-radius: 2px; /* закругление для старых Chrome и Safari */
+    -khtml-border-radius: 2px; /*закругление для браузера Konquerer системы Linux */ border-radius: 2px; /* закругление углов для всех, кто понимает */
+}
+.rsTree-context-menu-dialog  span:hover { border: 1px solid #abd4f9; background-color: #e2edf7;}
+.rsTree-context-menu-parent             { background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAHCAYAAAAvZezQAAAAIklEQVR42mPQ0ND4z4AMQAIogjABuCCyAFgQpwoUM5AtAQCZuhdxDPLOrwAAAABJRU5ErkJggg==') right center no-repeat; }
+.rsTree-context-menu-parent-disabled    { background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAHCAYAAAAvZezQAAAAIklEQVR42mNobW39z4AMQAIogjABuCCyAFgQpwoUM5AtAQDbzijhM4TD8wAAAABJRU5ErkJggg==') right center no-repeat; }
+.rsTree-context-menu-dialog  span[class~='rsTree-context-menu-disabled'] {color: #a7a7a7;}

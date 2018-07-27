@@ -1,0 +1,40 @@
+<div id="StepAddInStep" class="dialog">
+    <div style="text-align: left;">
+        <label class="dialog-label-select">Тип шага:&nbsp;&nbsp;&nbsp;</label>
+        <label>Шаг:<input type="radio" name="stepType" ng-model="dialogs.options.stepAddInStep.stepType" value="step"></label>
+        <label>Начало цикла:<input type="radio" name="stepType" ng-model="dialogs.options.stepAddInStep.stepType" value="beginCycle"></label>
+        <label>Конец цикла:<input type="radio" name="stepType" ng-model="dialogs.options.stepAddInStep.stepType" value="endCycle"></label>
+    </div>
+    <hr>
+    <label ng-show="dialogs.options.stepAddInStep.stepType == 'step'" class="dialog-label-select">Группа шагов: <select
+            class="dialog-select"
+            ng-model="dialogs.options.stepAddInStep.listSteps"
+            ng-options="methd.name for methd in dialogs.options.listMethds"
+    ></select><br><br></label>
+
+    <label ng-show="dialogs.options.stepAddInStep.stepType == 'step'">Шаг:
+        <input list="stepAddInStepListId" class="input-datalist" type="text"
+               ng-model="dialogs.options.stepAddInStep.data.step;"
+               ng-change='dialogs.view.updateLists("stepAddInStep")'/><br>
+    </label>
+    <div class="step-title">{{dialogs.options.stepAddInStep.step.description}}</div>
+    <datalist id="stepAddInStepListId"
+              ng-model="dialogs.options.stepAddInStep.step"
+              ng-change='dialogs.view.stepAddInStep.stepChenge()' >
+        <option ng-repeat="step in dialogs.options.stepAddInStep.listSteps.list">{{step.name}}</option>
+    </datalist>
+
+    <label ng-show="dialogs.options.stepAddInStep.stepType == 'step'" >Ключ: <input type="text" ng-model="dialogs.options.stepAddInStep.data.key;"><br></label>
+    <label ng-show="dialogs.options.stepAddInStep.stepType == 'step'" >Значение: <input type="text" ng-model="dialogs.options.stepAddInStep.data.value;"><br><br></label>
+
+    <label ng-show="dialogs.options.stepAddInStep.stepType == 'step' || dialogs.options.stepAddInStep.stepType == 'beginCycle'">Время на выполнение: <input type="text" ng-model="dialogs.options.stepAddInStep.data.timeoutMilliseconds;"><br><br></label>
+    <label ng-show="dialogs.options.stepAddInStep.stepType == 'beginCycle'">Количество итераций цикла: <input type="text" ng-model="dialogs.options.stepAddInStep.data.numberIterationsCycle;"><br></label>
+    <label ng-show="dialogs.options.stepAddInStep.stepType == 'beginCycle'">Время выполнения цикла: <input type="text" ng-model="dialogs.options.stepAddInStep.data.runTimeCycleMilliseconds;"><br><br></label>
+
+    <label ng-show="dialogs.options.stepAddInStep.stepType == 'step'">Выполнить: <input type="radio" name="radio" ng-model="dialogs.options.stepAddInStep.flag" value="run"><br></label>
+    <label ng-show="dialogs.options.stepAddInStep.stepType == 'step'">Пропускать дефект: <input type="radio" name="radio" ng-model="dialogs.options.stepAddInStep.flag" value="skipBag"><br></label>
+    <label ng-show="dialogs.options.stepAddInStep.stepType == 'step'">Пропускать дефект, но метить тест: <input type="radio" name="radio" ng-model="dialogs.options.stepAddInStep.flag" value="skipBagButTestFailed"><br></label>
+    <label ng-show="dialogs.options.stepAddInStep.stepType == 'step'">Не выполнять: <input type="radio" name="radio" ng-model="dialogs.options.stepAddInStep.flag" value="notRun"><br><br></label>
+
+    <label>Не выводить в отчёт: <input type="checkbox" ng-model="dialogs.options.stepAddInStep.data.notShow;"></label>
+</div>

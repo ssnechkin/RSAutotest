@@ -1,0 +1,29 @@
+html, body, #tabstrip-parent, #tabstrip {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    height: 100%; margin: 0; padding: 0; border-width: 0; overflow:hidden;
+    /*Запрет выделения текста -ms-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none;*/
+}
+.dialog {display: none; text-align: right; color:#2f6e9e;}
+.dialog input[type='text']{width:350px; margin-bottom: 5px;}
+.dialog select {height:28px; width: 250px; margin-bottom: 5px;}
+
+.dependingStatus {width:224px;}
+.dependingOnTheTests {text-align: left;}
+.dependingOnTheTests select {width:190px;}
+.dependingOnTheTestsScroll {height:300px; overflow: auto;}
+.dependingOnTheTestsScroll div {width: 635px; color: ##5a5a5a; font-size: 0.99em;}
+.dependingOnTheTestsScroll strong {color: #d2ae00;}
+
+.ui-dialog-buttonset{width: 100%; text-align: right;}
+/*.ui-button-left {float:left;}
+.ui-button-right {float:right;}*/
+
+#FileListDiv {display: inline-block;}
+#FileListDiv select{margin-top: 7px;}
+#FileList {font-size: 16px; width: 220px; outline: none; height:34px; line-height:34px;
+    -moz-border-radius: 5px; /* Firefox */
+    -webkit-border-radius: 5px; /* Safari, Chrome */
+    -khtml-border-radius: 5px; /* KHTML */
+    border-radius: 5px; /* CSS3 */
+}
+#AddNewFile, #AddFileButton, #DownloadFile, #DeletFile { width: 73px; margin-top: 6px; font-size: 16px;}

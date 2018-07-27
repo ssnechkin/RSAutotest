@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue May 22 11:07:47 EET 2018
+dhbcore-7.5.0.2.jar>=
+dhbcore-7.5.0.2.pom>=

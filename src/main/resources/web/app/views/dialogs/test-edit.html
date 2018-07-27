@@ -1,0 +1,42 @@
+<div id="TestEdit" class="dialog">
+    <label>Наименование: <input type="text" ng-model="dialogs.options.testEdit.data.test;"><br></label>
+    <label>Краткое наименование: <input type="text" ng-model="dialogs.options.testEdit.data.shortName;"><br></label>
+    <label>Данные для теста из: <input type="text" ng-model="dialogs.options.testEdit.data.value;"><br></label>
+    <label>Запускать после статуса родительского теста:
+        <select ng-model="dialogs.options.testEdit.data.startupDependencyOnParent;" class="dependingStatus">
+            <option value="RUN">Выполняется</option>
+            <option selected value="COMPLETED">Завершён</option>
+            <option value="SUCCESSFUL">Выполнен успешно</option>
+            <option value="FAILURE">Выполнен с ошибкой</option>
+            <option value="BROKEN">Сломан</option>
+            <option value="CANCELLED">Отменён</option>
+        </select><br></label>
+    <label>Не выполнять: <input type="checkbox" ng-model="dialogs.options.testEdit.data.notRun;"></label><br>
+    <br>
+    <div class="dependingOnTheTests"><strong >Список тестов со статусами, от которых зависит запуск текущего теста</strong><hr>
+        <select ng-model="dialogs.options.testDepending">
+            <option ng-repeat="tests in dialogs.options.tests" value="{{tests}}">{{tests.name}}</option>
+        </select>&nbsp;&nbsp;<select ng-model="dialogs.options.testDependingStatus">
+            <option value="RUN">Выполняется</option>
+            <option selected value="COMPLETED">Завершён</option>
+            <option value="SUCCESSFUL">Выполнен успешно</option>
+            <option value="FAILURE">Выполнен с ошибкой</option>
+            <option value="BROKEN">Сломан</option>
+            <option value="CANCELLED">Отменён</option>
+        </select>&nbsp;&nbsp;<input type="button" value="Добавить зависимость" ng-click="dialogs.view.addDepending();" class="ui-button-right ui-button ui-corner-all ui-widget">
+        <br>
+        <br>
+        <div class="dependingOnTheTestsScroll" ng-show="dialogs.options.testEdit.data.dependingOnTheTestsList.length > 0">
+            <div ng-repeat="dependingTest in dialogs.options.testEdit.data.dependingOnTheTestsList" >
+                <div><strong>Наименование: </strong>{{dependingTest.name}} </div>
+                <div ng-show="dependingTest.shortName != undefined"><strong>Краткое наименование: </strong>{{dependingTest.shortName}}</div>
+                <div ng-show="dependingTest.value != undefined"><strong>Данные из: </strong>{{dependingTest.value}}</div>
+                <div><strong>Статсу: </strong><b>{{dependingTest.statusDescription}}</b></div>
+                <hr>
+                <div><input type="button" value="Удалить" ng-click="dialogs.options.testEdit.data.dependingOnTheTestsList.splice(dialogs.options.testEdit.data.dependingOnTheTestsList.indexOf(dependingTest), 1);" class="ui-button-right ui-button ui-corner-all ui-widget"></div>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>

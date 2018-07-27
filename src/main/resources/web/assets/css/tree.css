@@ -1,0 +1,32 @@
+.associatedTestClass { /*border-left: 3px solid #ccc;*/ }
+.willNotBeExecuted { color: red;}
+
+.rsTree {
+    -moz-border-radius: 10px; /* Firefox */
+    -webkit-border-radius: 10px; /* Safari, Chrome */
+    -khtml-border-radius: 10px; /* KHTML */
+    border-radius: 10px; /* CSS3 */
+}
+
+.rsTree-suite { background-image: url(/assets/images/suite.png); background-repeat: no-repeat; background-position-y: center; padding-left: 23px; }
+.rsTree-test { background-image: url(/assets/images/test.png); background-repeat: no-repeat; background-position-y: center; padding-left: 23px; }
+.rsTree-step { background-image: url(/assets/images/step.png); background-repeat: no-repeat; background-position-y: center; padding-left: 23px; }
+.rsTree-key { background-image: url(/assets/images/data.png); background-repeat: no-repeat; background-position-y: center; padding-left: 23px; }
+.rsTree-beginCycle, .rsTree-endCycle { background-image: url(/assets/images/for.png); background-repeat: no-repeat; background-position-y: center; padding-left: 23px; }
+.rsTreeList-step { background-image: url(/assets/images/node.png); background-repeat: no-repeat; background-position-y: center; padding-left: 23px; }
+
+.not-run span.rsTree-suite { background-image: url(/assets/images/suiten.png); background-repeat: no-repeat; background-position-y: center; padding-left: 23px; }
+.not-run span.rsTree-test { background-image: url(/assets/images/testn.png); background-repeat: no-repeat; background-position-y: center; padding-left: 23px; }
+.not-run span.rsTree-step { background-image: url(/assets/images/stepn.png); background-repeat: no-repeat; background-position-y: center; padding-left: 23px; }
+.not-run span.rsTree-key { background-image: url(/assets/images/datan.png); background-repeat: no-repeat; background-position-y: center; padding-left: 23px; }
+.not-run span.rsTree-beginCycle, .not-run span.rsTree-endCycle { background-image: url(/assets/images/forn.png); background-repeat: no-repeat; background-position-y: center; padding-left: 23px; }
+.not-run span.rsTreeList-step { background-image: url(/assets/images/noden.png); background-repeat: no-repeat; background-position-y: center; padding-left: 23px; }
+
+.dialog-select {color: #029a07; height:28px; line-height:28px; width:224px;}
+.dialog-label-select {color: #029a07;}
+.dialog-div-select {height:28px;}
+.input-datalist {height:22px;}
+
+.not-run {color:#777;}
+
+.step-title {width: 550px; font-size: 0.8em; color: #319a04;}
